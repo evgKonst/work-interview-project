@@ -1,0 +1,12 @@
+<form action="/login/reg" method="POST">
+    <input placeholder="login" type="login" name="login" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/> 
+    <input placeholder="email" type="email" name="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
+    <input placeholder="Пароль" type="password" name="password" minlength="4" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
+    <input placeholder="Повторите пароль" type="password" name="password_repeat" minlength="4" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
+
+    {{#if error }}
+        <p>{{error}}</p>
+    {{/if}}
+
+    <input type="submit" value="Зарегистрироваться" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</form>
