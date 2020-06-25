@@ -1,11 +1,28 @@
-<form action="/login/log" method="POST">
-  <input type="login" name="login" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
-    <input type="email" name="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
+<div class="container">
+<form action="/login/log" class="group" method="POST">
+  <div class ="group">
+    <input type="login" name="login" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
+    <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Your login</label>
+    </div>
+    <div class ="group">
+      <input type="email" name="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
+    <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Your E-mail</label>
+    </div>
+    <div class ="group">
     <input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
-
+    <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Your password</label>
+    </div>    
+    
     {{#if error }}
         <p>{{error}}</p>
     {{/if}}
 
     <input type="submit" value="Войти" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 </form>
+</div>
