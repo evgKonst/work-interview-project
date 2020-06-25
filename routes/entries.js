@@ -99,9 +99,15 @@ router.delete('/:cip/:id', async function (req, res) {
 
       company.question = company.question.filter(el=>el!=req.params.id)
       console.log(company.question);
-
-
       await company.save();
+      console.log(company.question.length)
+      if(company.question.length==0){
+        await Company.deleteOne({_id: req.params.cip})
+        console.log('Successful deletion')
+        return res.redirect(`/entries/`)
+      }
+
+      
       res.redirect(`/entries/${req.params.cip}`);
 
     } 
