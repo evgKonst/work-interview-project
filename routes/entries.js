@@ -16,7 +16,7 @@ router.get('/', authFunc, async function (req, res, next) {
 });
 
 router.post('/', async function (req, res, next) {
-  console.log(req.body.body)
+  // console.log(req.body.body)
   let arr = req.body.body.split('/')
   console.log(arr)
   arr2 = [];
@@ -61,45 +61,60 @@ router.get('/:id', async function (req, res, next) {
   let arr = [];
   for(i=0; i<company.question.length; i++){
     let post = await Post.findById(company.question[i])
+    post.company_id = company.id
     arr.push(post)
   }
-  console.log(arr);
+  // console.log(arr);
     // let question = await Post.find()
     res.render('entries/show', {arr, company});
 });
 
-router.post('/:id', async function (req, res) {
-  let post = await Post.findById(req.params.id);
+router.post('/:id/:cip', async function (req, res) {
+  let post = await Post.findById(req.params.cip);
   // console.log(req.body)
+  let url = req.params.id;
+  // console.log(url)
   if(req.session.authUser._id == post.author ){
     post.body = req.body.body;
      await post.save();
 
-    res.redirect(`/entries`);
+    res.redirect(`/entries/${url}`);
   } else {
     res.redirect(`/entries`)
   
   }
 });
 
-router.delete('/:id', async function (req, res) {
+router.delete('/:cip/:id', async function (req, res) {
   
     let post = await Post.findById(req.params.id);
-    // console.log(post._id)
+    const url = req.params.cip
+    console.log(url)
+    let company = await Company.findById(req.params.cip)
+    console.log(company.question)
+  console.log(req.session.authUser._id)
+  console.log(post.author)
     if(req.session.authUser._id==post.author){
-      await Post.deleteOne({'_id': req.params.id})
-      
+      await Post.deleteOne({id: req.params.id})
+
+      company.question = company.question.filter(el=>el!=req.params.id)
+      console.log(company.question);
+
+
+      await company.save();
+      res.redirect(`/entries/${req.params.cip}`);
+
     } 
-     
-    res.redirect('/entries');
+    res.redirect(`/entries/`);
 });
 
-router.get('/:id/:cip/edit', async function (req, res, next) {
+router.get('/:cip/:id/edit', async function (req, res, next) {
   console.log(req.params.id)
+  console.log(req.params.cip)
+  let url = req.params.cip;
     let post = await Post.findById(req.params.id);
-    res.render('entries/edit', { post });
+    res.render('entries/edit', {post, url});
 });
-
 
 module.exports = router;
 
