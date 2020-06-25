@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-      {{!-- <link rel="stylesheet" href="/stylesheets/normalize.css">
-      <link rel="stylesheet" href="/stylesheets/application.css"> --}}
+<link rel="stylesheet" href="/styles/styles.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script defer src="/js/application.js"></script>
 
-      <title>Work Intervie History</title>
+      <title>Jobber</title>
   </head>
   <body>
-      <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
-          <div class="max-w-700 center wrap-float">
-              <nav class="clearfix mar-b-1">
+      <header role="banner" class="header">
+              <nav class="navigation">
+
+
+              
+
                   {{#if user}}
                   {{user._id}}
                   <a href="/login/logout">logout</a>
                   {{/if}}
-                  <ul class="no-bullets no-margin no-padding right">
-                      <li  class="pipe-separate t-light-green left"><a href="/entries">home</a></li>
-                      {{!-- <li  class="pipe-separate t-light-green left"><a href="/login/logout">logout</a></li> --}}
-                  </ul>
+                  <ul>
+                    <a href="/reg">Registration</a>  
+                    <a href="/login">Login</a> 
+                    <a href="/entries">home</a>
+                    </ul>
               </nav>
-
-              <div class="logo-container">
-                  
-                  <h2>Work Intervie History</h2>
-              </div>
-          </div>
       </header>
-      <div class="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
-          <div class="max-w-700 center">
+        <div class = "mainerBlock">
+          <div class = "wrapper">
+
             {{{body}}}
           </div>
-      </div>
-  </body>
+          </div>
+          </body>
+        </body>
 </html>
