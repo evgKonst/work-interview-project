@@ -1,5 +1,6 @@
-<div class = "wrapper">
-<h1>Write your question at tht intervew</h1>
+<div class = "wrapperNew">
+
+<h1 class = "WriteQuest">Write your question </h1>
 
 {{#if errors}}
 <span>Something went wrong:</span>
@@ -10,22 +11,57 @@
 </ul>
 {{/if}}
 
-
 <form method="post" action="/entries">
-  <label for="title-input" class="block mar-b-1">Company</label>
+<div class ="group">
   <input placeholder="Choose company" id="title-input" name="company" type="text" value="{{entry.title}}" tabindex="1"
     class="block w-100 no-outline no-border pad-1 mar-b-2">
-  <label for="title-input" class="block mar-b-1">Date of intervie</label>
-  <input placeholder="enter date of interview" id="title-input" name="date" type="text" value="{{entry.date}}" tabindex="1"
+  <span class="highlight"></span>
+      <span class="bar"></span>
+    
+  </div>
+  <div class ="group">
+  <input placeholder="date of interview" id="title-input" name="date" type="text" value="{{entry.date}}" tabindex="1"
     class="block w-100 no-outline no-border pad-1 mar-b-2">
-  <label for="body-textarea" class="block mar-b-1">Body:</label>
-  <textarea placeholder="Write each questions on the new string" id="body-textarea" name="body" tabindex="2"
+  <span class="highlight"></span>
+      <span class="bar"></span>
+  
+  </div>
+  <div class ="group">
+  <textarea placeholder="Write each questions" id="body-textarea" name="body" tabindex="2"
     class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{entry.body}}</textarea>
-
+<span class="highlight"></span>
+      <span class="bar"></span>
+  
+</div>
   <input type="submit" value="Publish" tabindex="3"
     class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
 </form>
 </div>
+
+<div class = "WrapperForShow">
+<main role="main">
+  <ul class="spisok">
+    <p>{{company.name}}</p>
+    {{#each arr}}
+      <li class="ent-item pad-b-4">
+          <p class="opisanie">Author: {{author}}</p>
+          <p class="opisanieTwo">"{{body}}"</p>
+        <span class="opisanie">Intervewed {{dateInterv}}</span>
+          <span class="opisanie">Date: {{date}}</span>
+        <ul class="no-bullets no-padding mar-t-2">
+  <div class = "inspisok">
+    <a href="/entries/{{company_id}}/{{id}}/edit" class="c-white">edit</a>
+    <form method="POST" action="/entries/{{company_id}}/{{id}}" class="inline">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete" class="no-border no-outline no-bg c-white hover-underline">
+    </form>
+   </div> 
+  </li>
+</ul> 
+      </li>
+    {{/each}}
+  </ul>
+</main>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
