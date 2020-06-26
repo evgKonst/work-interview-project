@@ -4,10 +4,10 @@
     <p>{{company.name}}</p>
     {{#each arr}}
       <li class="ent-item pad-b-4">
-          <p class="opisanie">Author: {{author}}</p>
-          <p class="opisanieTwo">"{{body}}"</p>
-        <span class="opisanie">Intervewed {{dateInterv}}</span>
-          <span class="opisanie">Date: {{date}}</span>
+          <h4 class="opisanieTwo">"{{body}}"</h4>
+          <p class="opisanie">Author: {{authorLogin}}</p>
+        <p class="opisanie">Date of intervew: {{dateInterv}}</p>
+          <p class="opisanie">Create at: {{date}}</p>
         <ul class="no-bullets no-padding mar-t-2">
   <div class = "inspisok">
     <a href="/entries/{{company_id}}/{{id}}/edit" class="c-white">edit</a>
