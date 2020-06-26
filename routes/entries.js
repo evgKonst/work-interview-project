@@ -19,7 +19,7 @@ router.get('/', authFunc, async function (req, res, next) {
 
 router.post('/', async function (req, res, next) {
   // console.log(req.body.body)
-  let arr = req.body.body.split('/')
+  let arr = req.body.body.split('\n')
   console.log(arr)
   arr2 = [];
   for(i=0; i<arr.length; i+=1){

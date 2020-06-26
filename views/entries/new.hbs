@@ -12,13 +12,13 @@
 
 <form method="post" action="/entries">
   <label for="title-input" class="block mar-b-1">Company</label>
-  <input id="title-input" name="company" type="text" value="{{entry.title}}" tabindex="1"
+  <input placeholder="Choose company" id="title-input" name="company" type="text" value="{{entry.title}}" tabindex="1"
     class="block w-100 no-outline no-border pad-1 mar-b-2">
   <label for="title-input" class="block mar-b-1">Date of intervie</label>
-  <input id="title-input" name="date" type="text" value="{{entry.date}}" tabindex="1"
+  <input placeholder="enter date of interview" id="title-input" name="date" type="text" value="{{entry.date}}" tabindex="1"
     class="block w-100 no-outline no-border pad-1 mar-b-2">
   <label for="body-textarea" class="block mar-b-1">Body:</label>
-  <textarea id="body-textarea" name="body" tabindex="2"
+  <textarea placeholder="Write each questions on the new string" id="body-textarea" name="body" tabindex="2"
     class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{entry.body}}</textarea>
 
   <input type="submit" value="Publish" tabindex="3"

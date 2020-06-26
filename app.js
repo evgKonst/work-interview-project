@@ -15,7 +15,7 @@ const app = express();
 
 // Подключаем mongoose.
 const mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost:27017/workBook', { useNewUrlParser: true,  useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://user1:1q2w3e@cluster0-x9olz.mongodb.net/WorkBook?retryWrites=true&w=majority', { useNewUrlParser: true,  useUnifiedTopology: true });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
