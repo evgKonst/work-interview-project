@@ -5,6 +5,8 @@ const Post = require('../models/post');
 const Company = require('../models/company');
 const {authFunc} = require('./login')
 const session = require('express-session')
+const User = require('../models/user')
+
 
 // entries
 router.get('/', authFunc, async function (req, res, next) {
@@ -62,6 +64,9 @@ router.get('/:id', async function (req, res, next) {
   for(i=0; i<company.question.length; i++){
     let post = await Post.findById(company.question[i])
     post.company_id = company.id
+    let authorLogin = await User.findById(post.author)
+    console.log(authorLogin.login)
+    post.authorLogin = authorLogin.login
     arr.push(post)
   }
   // console.log(arr);

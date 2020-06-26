@@ -37,7 +37,7 @@ loginRouter.get('/log', (req, res)=>{
    let user
    
   try{
-     user = await User.author(req.body.email, req.body.password)
+     user = await User.author(req.body.login, req.body.password)
   } catch (error){
     res.render('authorization/author', {error: error})
     return
