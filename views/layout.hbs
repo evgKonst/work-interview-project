@@ -11,21 +11,16 @@
   </head>
   <body>
       <header role="banner" class="header">
+             <div class = "logo"> <h1 class = "jobble">JOBBLE</h1>
               <nav class="navigation">
-
-
               
-
                   {{#if user}}
-                  {{user.login}}
-                  <a href="/login/logout">logout</a>
+                  <a class = "whitePaper" href="/entries">HOME</a>
+                  <a class = "home whitePaper" href="/login/logout">LOG OUT</a>
                   {{/if}}
-                
-                    <a href="/entries">home</a>
-
-              </nav>
-              <div class = "logo"> <h1 class = "jobble">JOBBLE</h1>
-              <p>Your best interview practice</p></div>
+                  
+                    
+      </nav>
       </header>
         <div class = "mainerBlock">
           
@@ -33,6 +28,12 @@
             {{{body}}}
           
           </div>
+
+<div class = "newFooter">
+  <div class = "foot"></div>
+  <div class = "foot"></div>
+  <div class = "foot"></div>   
+</div>
           </body>
         </body>
 </html>
