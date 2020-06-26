@@ -22,8 +22,8 @@ await user.save()
 return user
 }
 
-userSchema.statics.author = async function(email, password){
-const user = await this.findOne({email: email})
+userSchema.statics.author = async function(login, password){
+const user = await this.findOne({login: login})
 if(!user) throw Error('User lost') 
 if(user.password !== password) throw new Error('Wrong password')
 return user

@@ -1,21 +1,38 @@
-<a href="/entries/new" class="block button w-100 mar-t-2 mar-b-3 pad-2 round-1 text-c center">Write data</a>
-
-<h2>Company list</h2>
-
-  <form id="seachForm" action="">
+<div class = "wrapperMain">
+<div class = "super">
+  <div class = "aboutCompany">
+<a class = "digitalHref" href="/entries/new">ADD NEW</a>
+</div>
+<form id="seachForm" action="">
     <input id="seachInp" type="text" name="company" value="" placeholder="company">
     <button id="seachButt">Seach</button>
-  </form> 
-
+  </form>
+</div> 
+ 
 
 <main role="main" >
-  <ul class="entries-list no-bullets no-padding">
+  <ul class="bullet">
     {{#each company}}
-      <li class="entry-item pad-b-4">
-        <a href="/entries/{{id}}" class="entry-title font-2 pad-b-1-4 c-white">{{name}}</a>
+      <li class="AllCompany">
+        <a href="/entries/{{id}}">{{name}}</a>
         {{!-- <span class="entry-date block font-3-4 c-lt-gray">Written on </span>
           <p class="entry-stub">11111</p> --}}
-      </li>
+    </li>
     {{/each}}
   </ul>
 </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
+
+<script>
+  $("#seachInp").suggestions({
+    token: "1dece4c2c20dc44893da99091df724ac23470a82",
+    type: "PARTY",
+    onSelect: function (suggestion) {
+      console.log(suggestion.value);
+    }
+  });
+</script>
