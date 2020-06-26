@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "npm i -D nodemon",
     "dev": "npx nodemon ./bin/www",
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
