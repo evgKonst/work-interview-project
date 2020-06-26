@@ -4,34 +4,44 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session')
+const dotenv = require('dotenv')
 
 const methodOverride = require('method-override')
 const indexRouter = require('./routes/index');
 const entriesRouter = require('./routes/entries');
-const {loginRouter} = require('./routes/login')
+const {
+  loginRouter
+} = require('./routes/login')
 
 const app = express();
 //  app.locals.user = null;
 
+dotenv.config()
+
 // Подключаем mongoose.
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://user1:1q2w3e@cluster0-x9olz.mongodb.net/WorkBook?retryWrites=true&w=majority', { useNewUrlParser: true,  useUnifiedTopology: true });
+mongoose.connect(process.env.DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.use(session({ 
+app.use(session({
   // store: new FileStore(),
   secret: 'f'
   // resave: false,
   // cookie: {
-    // expires: 7000
+  // expires: 7000
   // }
 }))
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -48,7 +58,7 @@ app.use(methodOverride(function (req, res) {
 }));
 
 
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
   app.locals.user = req.session.authUser;
   next()
 })
