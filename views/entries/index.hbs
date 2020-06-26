@@ -1,17 +1,19 @@
-<a href="/entries/new">intervew Helper</a>
-
-<h2>Company list</h2>
-
-  <form id="seachForm" action="">
+<div class = "wrapperMain">
+<div class = "super">
+  <div class = "aboutCompany">
+<a class = "digitalHref" href="/entries/new">ADD NEW</a>
+</div>
+<form id="seachForm" action="">
     <input id="seachInp" type="text" name="company" value="" placeholder="company">
     <button id="seachButt">Seach</button>
-  </form> 
-
+  </form>
+</div> 
+ 
 
 <main role="main" >
-  <ul class="forEntryes">
+  <ul class="bullet">
     {{#each company}}
-      <li class="entry-item pad-b-4">
+      <li class="AllCompany">
         <a href="/entries/{{id}}">{{name}}</a>
         {{!-- <span class="entry-date block font-3-4 c-lt-gray">Written on </span>
           <p class="entry-stub">11111</p> --}}
@@ -19,3 +21,4 @@
     {{/each}}
   </ul>
 </main>
+</div>
