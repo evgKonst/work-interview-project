@@ -1,7 +1,7 @@
 <h2> <strong> Jobble - Intreview practice </strong> </h2> 
   <br>v 1.0
 <p align="center">
-  <img src="screenshots/jobble1.png" width="350" alt="Start page">
+  <img src="screenshots/jobble1.png" width="750" alt="Start page">
 </p>
 <hr>
 <h4><strong>Над проектом работали: </strong></h4>
