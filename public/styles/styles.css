@@ -234,10 +234,10 @@ input:focus ~ .highlight {
 }
 
 .apple {
-  margin-left: 337px;
+  margin-left: 385px;
   margin-top: 70px;
-    width: 20%;
-    height: 210px;
+    width: 12%;
+    height: 150px;
     /* position: absolute; */
     left: 500px;
     top: 100px;
