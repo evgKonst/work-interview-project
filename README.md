@@ -1,5 +1,8 @@
 <h2> <strong> Jobble - Intreview practice </strong> </h2> 
   <br>v 1.0
+<p align="center">
+  <img src="screenshots/jobble1.png" width="350" alt="Start page">
+</p>
 <hr>
 <h4><strong>Над проектом работали: </strong></h4>
 <ul>
@@ -53,10 +56,6 @@ Jobble предлагает обмен интересными вопросами
 <hr>
 <h4> <strong> Скриншоты Jobble </strong></h4>
 
-
-<p align="center">
-  <img src="screenshots/jobble1.png" width="350" alt="Start page">
-</p>
 
 <p align="center">
   <img src="screenshots/jobble2.png" width="350" alt="Login page">
